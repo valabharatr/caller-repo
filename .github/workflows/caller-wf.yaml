@@ -20,7 +20,7 @@ on:
 
 jobs:
   call-reusable-wf:
-    uses: github.com/valabharatr/baserepo/.github/workflows/reusable-deploy.yaml@main
+    uses: valabharatr/baserepo/.github/workflows/reusable-deploy.yaml@main
     with:
       source_branch: ${{ inputs.source_branch }}
       deployment_env: ${{ inputs.deployment_env }}
