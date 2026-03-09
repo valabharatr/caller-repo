@@ -1,0 +1,26 @@
+name: Caller Workflow
+
+on:
+  worflow_dispatch:
+    inputs:
+      source_branch:
+        description: "Branch to Deploy"
+        type: string
+        required: true
+        default: "main"
+
+      deployment_env:
+        description: "Deployment Environment"
+        type: choice
+        required: true
+        options:
+          - dev
+          - stg
+          - prod
+
+jobs:
+  call-reusable-wf:
+    uses: github.com/valabharatr/baserepo/.github/workflows/reusable-deploy.yaml
+    with:
+      source_branch: ${{ inputs.source_branch }}
+      deployment_env: ${{ inputs.deployment_env }}
