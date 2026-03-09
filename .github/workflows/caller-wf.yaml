@@ -1,7 +1,7 @@
 name: Caller Workflow
 
 on:
-  worflow_dispatch:
+  workflow_dispatch:
     inputs:
       source_branch:
         description: "Branch to Deploy"
